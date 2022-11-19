@@ -1,6 +1,6 @@
 import { Modal as ChakraModal, Image, Text, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, Spinner, Flex, UnorderedList, ListItem } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
-import { Pokemon } from "../helpers/types"
+import { pokemonDetails } from "../helpers/types"
 
 interface ModalProps {
   pokeId?: string
@@ -9,7 +9,7 @@ interface ModalProps {
 
 export default function Modal({ pokeId, onClose }: ModalProps) {
   const [isLoading, setIsLoading] = useState(true)
-  const [pokeData, setPokeData] = useState<Pokemon | undefined>()
+  const [pokeData, setPokeData] = useState<pokemonDetails | undefined>()
 
   useEffect(() => {
     const fetchData = async () => {
